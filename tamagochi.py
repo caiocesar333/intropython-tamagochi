@@ -89,7 +89,6 @@ class Tamagochi:
             alive = "Dead"
         print(f" - {self.name} | Status: {alive} \n")
         return self.name
-
     
     def return_statistics(self):
         return {"name": self.name, 
@@ -98,3 +97,19 @@ class Tamagochi:
             "boredom": self.boredom, 
             "exhaustion": self.exhaustion, 
             "alive": self.alive }
+
+    def return_statistics_as_list(self):
+            return [ self.name, 
+                self.hunger, 
+                self.health, 
+                self.boredom, 
+                self.exhaustion, self.alive ]
+
+    def load_tam(self, tam_json):
+        print(tam_json)
+        if type(tam_json) is list:
+            self.hunger = int(tam_json[1])
+            self.health = int(tam_json[2])
+            self.boredom = int(tam_json[3])
+            self.exhaustion = int(tam_json[4])
+            self.alive = bool(tam_json[5])

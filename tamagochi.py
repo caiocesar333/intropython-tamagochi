@@ -64,8 +64,9 @@ class Tamagochi:
             print(f"{self.name} found food. Its hunger is at {self.hunger}")
         elif id == 4:
             self.boredom = self.decrease_att(self.boredom)
+            self.exhaustion = self.increase_att(self.exhaustion)
             print(f"{self.name} played with its own shadow. But got tired by doing so")
-            print(f" Its boredom is at {self.hunger}. Its exhaustion is at {self.exhaustion}")
+            print(f" Its boredom is at {self.boredom}. Its exhaustion is at {self.exhaustion}")
 
         if self.health == 0 or self.hunger == 10 or self.boredom == 10 or self.exhaustion == 10:
             self.alive = False
